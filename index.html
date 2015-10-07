@@ -5,13 +5,38 @@
     <title>タイトル</title>
   </head>
   <body>
+    <section id="todoapp">
+      <header id="header">
+        <h1>Todoリスト</h1>
+        <input id="new-todo" plaseholder="することを入力してください" autofocus>
+      </header>
+      <section id="main">
+        <input id="toggle-all" type="checkbox">
+        <label for="toggle-all">すべて完了済みにする</label>
+        <ul id="todo-list"></ul>
+      </section>
+      <footer id="footer"></footer>
+    </section>
+
+    <div id="info">
+      <p> 項目をダブルクリックすると編集できます.</p>
+      <p> tmks0820</p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
-    <script src="http://documentcloud.github.com/underscore/underscoer-min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
     </script>
-    <script src="http://documentcloud.github.com/backbone/backbone-min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js">
     </script>
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js">
     </script>
+    <script type="text/template" id="item-template"></script>
+    <script type="text/template" id="stats-template"></script>
+    <script src="js/lib/models/todo.js"></script>
+    <script src="js/lib/collections/todos.js"></script>
+    <script src="js/lib/views/todos.js"></script>
+    <script src="js/lib/views/app.js"></script>
+    <script src="js/routers/router.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
