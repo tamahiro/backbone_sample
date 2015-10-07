@@ -34,7 +34,7 @@ app.AppView = Backbone.View.extend({
       this.$footer.html(this.statsTemplate({
         completed: completed,
         remaining: remaining
-      });
+      }));
       this.$('#filters li a')
         .removeClass('selected')
         .filter('[href="#/' + (app.TodoFilter || '') + '"]')
@@ -67,8 +67,8 @@ app.AppView = Backbone.View.extend({
 
   newAttributes: function(){
     return {
-      title: this.$input.val().trim();
-      order: app.Todos.nextOrder();
+      title: this.$input.val().trim(),
+      order: app.Todos.nextOrder(),
       completed: false
     };
   },
