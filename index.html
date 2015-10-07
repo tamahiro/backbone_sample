@@ -30,8 +30,32 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js">
     </script>
-    <script type="text/template" id="item-template"></script>
-    <script type="text/template" id="stats-template"></script>
+    <script type="text/template" id="item-template">
+      <div class="view">
+        <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+        <label><%- title %></label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" value="<%- title %>">
+    </script>
+    <script type="text/template" id="stats-template">
+      <span id="todo-count">残り <strong><%= remaining %></strong>件</span>
+      <ul id="filters">
+        <li>
+          <a class="selected" href="#/">すべて</a>
+        </li>
+        <li>
+          <a href="#/active">未了</a>
+        </li>
+        <li>
+          <a href="#/completed">完了済み</a>
+        </li>
+        </ul>
+
+        <% if (completed) { %>
+          <button id="clear-completed">完了済みの項目を消去(<%= completed %>件)</button>
+        <% } <%>
+    </script>
     <script src="js/lib/models/todo.js"></script>
     <script src="js/lib/collections/todos.js"></script>
     <script src="js/lib/views/todos.js"></script>
